@@ -5,13 +5,14 @@ import (
     "fmt"
     "io/ioutil"
     "net/http"
+    "os"
 )
 
 func main() {
-    url := "https://hooks.slack.com/services/set-up-your-url-here"
+    url := os.Getenv("WEBHOOK_URL")
     fmt.Println("URL:>", url)
 
-    var jsonStr = []byte(`{"text":"Someone is playing now... Do you wanna join?"}`)
+    var jsonStr = []byte(`{"text":"` + os.Getenv("INVITE_MESSAGE") + `"}`)
     req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonStr))
     req.Header.Set("Content-Type", "application/json")
     client := &http.Client{}
