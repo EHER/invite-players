@@ -2,7 +2,9 @@ package main
 
 import (
     "bytes"
+    "context"
     "fmt"
+    "github.com/aws/aws-lambda-go/lambda"
     "io/ioutil"
     "net/http"
     "os"
@@ -24,12 +26,16 @@ func postJson(url string, json []byte) (error) {
     return err
 }
 
-func main() {
+func HandleRequest(ctx context.Context) (string, error) {
     var url = os.Getenv("WEBHOOK_URL")
     var json = []byte(`{"text":"` + os.Getenv("INVITE_MESSAGE") + `"}`)
     err := postJson(url, json)
     if err != nil {
-        panic(err)
+        return "Error", err
     }
-    fmt.Printf("Message successfully sent")
+    return "Message successfully sent", nil
+}
+
+func main() {
+    lambda.Start(HandleRequest)
 }
