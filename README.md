@@ -9,7 +9,10 @@ It was tested with Terraria but other games with support to webhook
 may work as well.
 
 ## [Truck Simulator](truck-simulator)
-If you like to play Euro Truck Simulator II or American Truck Simulator on
+If you like to play [Euro Truck Simulator II](https://eurotrucksimulator2.com/)
+or [American Truck Simulator](https://americantrucksimulator.com/) on
 classic single player but also enjoy to share same experience with other 
-players. You must use your [World of Trucks](https://www.worldoftrucks.com) 
-account and deliver online jobs.
+players. 
+
+It requires you to login on [World of Trucks](https://www.worldoftrucks.com) 
+and to deliver online jobs.
