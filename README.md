@@ -1,4 +1,4 @@
-# invite-players
+# Invite Players
 A collection of tools to wire up games and notification systems in order to get players together.
 
 ## [Terraria](terraria)
