@@ -1,0 +1,6 @@
+apiVersion: v2
+name: invite-players-for-truck-simulator
+description: Notify Slack when an online job is in progress on World of Trucks
+type: application
+version: 0.1.0
+appVersion: 1.16.0

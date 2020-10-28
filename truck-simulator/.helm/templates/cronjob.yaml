@@ -1,0 +1,23 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: "{{ .Release.Name }}-check-for-active-job"
+spec:
+  schedule: "0 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: "{{ .Release.Name }}-check-for-active-job"
+            image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+            env:
+            - name: CURRENT_JOB_SELECTOR
+              value: "{{ .Values.world_of_trucks.current_job_selector }}"
+            - name: CUSTOM_MESSAGE
+              value: "{{ .Values.slack.custom_message }}"
+            - name: PROFILE_URL
+              value: "{{ .Values.world_of_trucks.profile_url }}"
+            - name: SLACK_WEBHOOK_URL
+              value: "{{ .Values.slack.webhook_url }}"
+          restartPolicy: OnFailure
