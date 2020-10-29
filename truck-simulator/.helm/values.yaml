@@ -1,5 +1,6 @@
+schedule: "*/10 * * * *"
 image:
-  repository: localhost:5000/notify-drivers
+  repository: "localhost:5000/notify-drivers"
   tag: "latest"
 slack:
   webhook_url: "http://localhost:8080"
