@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: "{{ .Release.Name }}-check-for-active-job"
 spec:
-  schedule: "0 * * * *"
+  schedule: "{{ .Values.schedule }}"
   jobTemplate:
     spec:
       template:
