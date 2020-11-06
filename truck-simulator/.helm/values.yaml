@@ -4,7 +4,7 @@ image:
   tag: "latest"
 slack:
   webhook_url: "http://localhost:8080"
-  custom_message: "Someone is delivering %s."
+  custom_message: "<%s|Someone> is delivering %s."
 world_of_trucks:
   current_job_selector: ".current-jobs .job > .title text{}"
   profile_url: "https://www.worldoftrucks.com/en/profile/4992950"
